@@ -14,8 +14,7 @@
   <script type="text/javascript" src="/js/clock.js"></script>
   <script src="/swal/sweetalert2.js"></script>
   <link rel="stylesheet" type="text/css" href="/style/datepicker.css" />
-  <script type="text/javascript" src="/js/datepicker.js"></script>
-  <script type="text/javascript" src="/js/timepicker.js"></script>
+  <!--<script type="text/javascript" src="/js/datepicker.js"></script>-->
   <script src="/js/window-handler.js"></script>
 
 <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
@@ -37,7 +36,7 @@
     <div id="site_content">
       <div id="content">
           <span>
-            <input id='start_dt' class='datepicker'>
+            <!--<input id='start_dt' class='datepicker'>-->
           </span>
         <div id="info">
         <table>
