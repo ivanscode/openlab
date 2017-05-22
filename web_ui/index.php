@@ -8,12 +8,15 @@
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
   <link rel="stylesheet" type="text/css" href="style/style.css" />
-  <script type="text/javascript" src="/js/clock.js"></script>
-  <script src="/swal/sweetalert2.js"></script>
-  <script src="/js/window-handler.js"></script>
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/js/auto-functions.js"></script>
-<link rel="stylesheet" href="/swal/sweetalert2.css">
+  <link rel="stylesheet" href="/swal/sweetalert2.css"/>
+  <script type="text/javascript" src="/js/clock.js"></script>
+  <script src="/swal/sweetalert2.js"></script>
+  <link rel="stylesheet" type="text/css" href="/style/datepicker.css" />
+  <script type="text/javascript" src="/js/datepicker.js"></script>
+  <script type="text/javascript" src="/js/timepicker.js"></script>
+  <script src="/js/window-handler.js"></script>
 
 <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
@@ -33,6 +36,9 @@
     </div>
     <div id="site_content">
       <div id="content">
+          <span>
+            <input id='start_dt' class='datepicker'>
+          </span>
         <div id="info">
         <table>
           <tr style="background: #D3D3D3; color: #000;">
