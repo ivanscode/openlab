@@ -9,16 +9,26 @@ while($row = mysqli_fetch_array($sqli)){
 }
 $sql = mysqli_query($connection, "SELECT * FROM `log` ORDER BY id DESC");
 while($row = mysqli_fetch_array($sql)){
+  $class_color = "green";
   $date_time = date_format(date_create($row['tin']), 'm/d H:i');
   $date_time_out = date_format(date_create($row['tout']), 'm/d H:i');
   foreach ($ids_not_out as $key => $value){
     if ($row['id'] == $value){
         $date_time_out = 'Signed In';
+        $class_color = "red";
         break;
     }
   }
-  echo "<tr>\n"
-."<th>{$row['name']}</th>\n"
+  $name = "";
+  $sql1 = mysqli_query($connection, "SELECT * FROM `people` WHERE `number` LIKE '%{$row['name']}%'");
+  while($row2 = mysqli_fetch_array($sql1)){
+    $name = $row2['name'];
+  }
+  if($name == ""){
+    $name = $row['name'];
+  }
+  echo "<tr class='{$class_color}'>\n"
+."<th>{$name}</th>\n"
 ."<th id='{$row['id']}' onclick='triggerRoomWindow(this.id)' style='cursor: pointer;'>{$row['room']}</th>\n"
 ."<th id='{$row['id']}' onclick='triggerDescriptionWindow(this.id)' style='cursor: pointer;'>{$row['description']}</th>\n"
 ."<th>{$date_time}</th>\n"

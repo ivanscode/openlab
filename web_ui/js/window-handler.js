@@ -60,3 +60,44 @@ function triggerDescriptionWindow(id){
   }
   })
 }
+
+function triggerIdentityWindow(id){
+  console.log("triggered");
+  $.ajax({
+    url: '/php/update-id-state.php',
+    type: 'get',
+    data: { "id_state": 0},
+    success: function(response) {}
+  });
+  swal({
+    title: 'Associate New IA',
+    type: 'question',
+    input: 'text',
+    confirmButtonText: 'Submit',
+    showCancelButton: true,
+  }).then(function(text){
+    $.ajax({
+      url: '/php/add-new-id.php',
+      type: 'get',
+      data: { "id": id, "email": text},
+      success: function(response) {
+        swal({
+          title: 'Success',
+          type: 'success',
+          timer: 800,
+          showConfirmButton: false
+        })
+      }
+    });
+  }, function(dismiss){
+    if(dismiss === 'cancel'){
+      $.ajax({
+        url: '/php/update-id-state.php',
+        type: 'get',
+        data: { "id_state": 0},
+        success: function(response) {}
+      });
+      noChange();
+  }
+  })
+}

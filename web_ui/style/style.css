@@ -337,6 +337,14 @@ table
 { margin: 10px 0 30px 0;
   width: 100%;}
 
+.green{
+
+}
+.red{
+  /*background: #8B0000;*/
+  background: #008B00;
+}
+
 table tr th
 { /*background: #F5F5F5;
   color: #111;

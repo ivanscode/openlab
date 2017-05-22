@@ -21,16 +21,37 @@ function launchAll(){
           type: 'get',
           data: { "state": 2},
           success: function(data) {
-            console.log(data);
             if(data=='1'){
               document.getElementById('status_img').src='/img/on.png';
             }else{
               document.getElementById('status_img').src='/img/off.png';
             }
           }});
+
       }, 1000); // refresh every 10000 milliseconds
     var auto_change = setInterval(
         function (){
           stateDown();
         }, 20000); // refresh every 10000 milliseconds
+    var auto_id = setInterval(
+      function(){
+        $.ajax({
+          url: '/php/update-id-state.php',
+          type: 'get',
+          data: { "id_state": 2},
+          success: function(data) {
+            if(data=='1'){
+              $.ajax({
+                url: '/php/update-id-state.php',
+                type: 'get',
+                data: { "id_state": 3},
+                success: function(data) {
+                  console.log(data);
+                  triggerIdentityWindow(data);
+                }});
+            }else{
+              //Do nothing
+            }
+          }});
+        }, 3000);
 }
