@@ -2,10 +2,10 @@ function triggerRoomWindow(id){
   swal({
     title: 'Change Lab Room',
     type: 'question',
-    input: 'text',
+    input: 'number',
     confirmButtonText: 'Submit',
     showCancelButton: true,
-  }).then(function(text){
+  }).then(function(number){
     $.ajax({
   url: '/php/update_room.php',
   type: 'get',
@@ -38,6 +38,7 @@ function triggerDescriptionWindow(id){
     title: 'Change Lab Description',
     type: 'question',
     input: 'text',
+    inputPlaceholder: 'Emulsion Lab',
     confirmButtonText: 'Submit',
     showCancelButton: true,
   }).then(function(text){
@@ -72,14 +73,15 @@ function triggerIdentityWindow(id){
   swal({
     title: 'Associate New IA',
     type: 'question',
-    input: 'text',
+    input: 'email',
+    inputPlaceholder: 'john_doe17@milton.edu',
     confirmButtonText: 'Submit',
     showCancelButton: true,
-  }).then(function(text){
+  }).then(function(email){
     $.ajax({
       url: '/php/add-new-id.php',
       type: 'get',
-      data: { "id": id, "email": text},
+      data: { "id": id, "email": email},
       success: function(response) {
         swal({
           title: 'Success',
@@ -99,5 +101,32 @@ function triggerIdentityWindow(id){
       });
       noChange();
   }
+  })
+}
+function triggerAddViolationsWindow(id){
+  swal({
+    title: 'Violations',
+    type: 'question',
+    input: 'text',
+    confirmButtonText: 'Submit',
+    showCancelButton: true,
+  }).then(function(text){
+    $.ajax({
+      url: '/php/add-new-id.php',
+      type: 'get',
+      data: { "id": id, "email": text},
+      success: function(response) {
+        swal({
+          title: 'Success',
+          type: 'success',
+          timer: 800,
+          showConfirmButton: false
+        })
+      }
+    });
+  }, function(dismiss){
+    if(dismiss === 'cancel'){
+      noChange();
+    }
   })
 }

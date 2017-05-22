@@ -41,6 +41,7 @@
             <th>Description</th>
             <th>Time In</th>
             <th>Time Out</th>
+            <th>Lab Violations</th>
           </tr>
         <?php
         $root = $_SERVER['DOCUMENT_ROOT'];
