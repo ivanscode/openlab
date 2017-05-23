@@ -14,6 +14,7 @@ function launchAll(){
       }
     }, 1000); // refresh every 10000 milliseconds
 
+    //Update the state of the PI to the page
     var auto_state = setInterval(
       function (){
         $.ajax({
@@ -29,10 +30,14 @@ function launchAll(){
           }});
 
       }, 1000); // refresh every 10000 milliseconds
+
+    //Force-check if the PI is still running
     var auto_change = setInterval(
         function (){
           stateDown();
-        }, 20000); // refresh every 10000 milliseconds
+        }, 20000);
+
+    //Monitor for incoming new IDs
     var auto_id = setInterval(
       function(){
         $.ajax({

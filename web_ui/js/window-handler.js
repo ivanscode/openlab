@@ -131,3 +131,11 @@ function triggerAddViolationsWindow(id){
     }
   })
 }
+function triggerShowViolationsWindow(id){
+  swal({
+    title: 'Violations',
+    type: 'info',
+    confirmButtonText: 'Ok',
+    showCancelButton: false,
+  })
+}
