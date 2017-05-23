@@ -10,7 +10,7 @@ function triggerRoomWindow(id){
     $.ajax({
   url: '/php/update_room.php',
   type: 'get',
-  data: { "room": text, "id": id},
+  data: { "room": number, "id": id},
   success: function(response) {
     swal({
       title: 'Success',
