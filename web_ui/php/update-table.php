@@ -10,8 +10,16 @@ $ids_not_out = array();
 while($row = mysqli_fetch_array($sqli)){
     array_push($ids_not_out, $row['id']);
 }
+$time = date("Y-m-d h:i:s");
+$date = new DateTime($time);
+$date->modify('-4 hour');
+$nextday = $date;
+$date = date_format($date, "Y-m-d");
+$nextday->modify('+1 day');
+$nextday = date_format($nextday, "Y-m-d");
+
 //Fetch all people
-$sql = mysqli_query($connection, "SELECT * FROM `log` ORDER BY id DESC");
+$sql = mysqli_query($connection, "SELECT * FROM `log` WHERE tin >='{$date} 00:00:00' AND tin <'{$nextday} 00:00:00' ORDER BY id DESC");
 while($row = mysqli_fetch_array($sql)){
   $class_color = "green";
   $date_time = date_format(date_create($row['tin']), 'm/d H:i');
