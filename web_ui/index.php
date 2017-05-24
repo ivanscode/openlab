@@ -30,7 +30,7 @@
 			<a href="/student">
 				<div class="fmcircle_border">
 					<div class="fmcircle_in fmcircle_blue">
-						<span>Students</span><img src="" alt="" />
+						<span>Students</span><img src="/img/student.png" alt="" />
 					</div>
 				</div>
 			</a>
@@ -41,7 +41,7 @@
 			<a href="/today">
 				<div class="fmcircle_border">
 					<div class="fmcircle_in fmcircle_red">
-						<span>Faculty</span><img src="" alt="" />
+						<span>Faculty</span><img src="/img/teacher.png" alt="" />
 					</div>
 				</div>
 			</a>

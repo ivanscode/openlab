@@ -80,9 +80,9 @@
 
 .fmcircle_in img {
 	border: none;
-	margin: 53px;
-	width: 64px;
-	height: 64px;
+	margin: 33px;
+	width: 100px;
+	height: 100px;
 
 	-webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
