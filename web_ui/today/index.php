@@ -1,10 +1,6 @@
 <?php
-   session_start();
-   //PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
-   if(!isset($_SESSION['username'])){
-      //header("location:/login/main_login.php");
-   }
-
+    $root = $_SERVER['DOCUMENT_ROOT'];
+    //require ($root . "\login\loginheader.php");
 ?>
 
 <!DOCTYPE HTML>
