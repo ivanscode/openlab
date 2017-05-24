@@ -9,7 +9,7 @@ state = '1'
 class YourCode(object):
     def run(self):
         while True:
-            urllib2.urlopen("http://openlab.ma1geek.org/php/update-state.php?state="+state).read()
+            urllib2.urlopen("http://openlab.ma1geek.org/php/php/update-state.php?state="+state).read()
             time.sleep(1)
 
 

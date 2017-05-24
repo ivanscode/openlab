@@ -18,7 +18,7 @@ while True:
             print(counter)
             if(counter==21):
                 print("the file contents: "+id)
-                urllib2.urlopen("http://openlab.ma1geek.org/addinfo.php?id="+id).read()
+                urllib2.urlopen("http://openlab.ma1geek.org/php/addinfo.php?id="+id).read()
             if(counter>21):
                 counter=1
                 id=''
