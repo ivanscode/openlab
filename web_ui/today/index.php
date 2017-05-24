@@ -1,6 +1,6 @@
 <?php
     $root = $_SERVER['DOCUMENT_ROOT'];
-    //require ($root . "\login\loginheader.php");
+    require ($root . "\login\loginheader.php");
 ?>
 
 <!DOCTYPE HTML>

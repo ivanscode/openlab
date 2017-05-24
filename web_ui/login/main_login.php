@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location:../index.php");
+    header("location:../");
 }
 ?>
 <!DOCTYPE html>
@@ -11,8 +11,8 @@ if (isset($_SESSION['username'])) {
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-    <link href="../css/main.css" rel="stylesheet" media="screen">
+    <link href="../style/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="../style/login.css" rel="stylesheet" media="screen">
   </head>
 
   <body>

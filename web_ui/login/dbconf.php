@@ -1,9 +1,9 @@
 <?php
 //DATABASE CONNECTION VARIABLES
-$host = "localhost"; // Host name
-$username = "user"; // Mysql username
-$password = "password"; // Mysql password
-$db_name = "login"; // Database name
+$host = "208.91.199.11:3306"; // Host name
+$username = "ikouzmine"; // Mysql username
+$password = "0t8V2ukPcYY!"; // Mysql password
+$db_name = "openlab_signin"; // Database name
 
 //DO NOT CHANGE BELOW THIS LINE UNLESS YOU CHANGE THE NAMES OF THE MEMBERS AND LOGINATTEMPTS TABLES
 

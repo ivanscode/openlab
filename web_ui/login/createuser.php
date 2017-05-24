@@ -1,6 +1,7 @@
 <?php
-require 'includes/functions.php';
-include_once 'config.php';
+$root = $_SERVER['DOCUMENT_ROOT'];
+require $root . '\login\includes\functions.php';
+include_once $root . '\login\config.php';
 
 //Pull username, generate new ID and hash password
 $newid = uniqid(rand(), false);
@@ -23,14 +24,6 @@ if (isset($admin_email)) {
 if ($pw1 != $pw2) {
 
     echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password fields must match</div><div id="returnVal" style="display:none;">false</div>';
-
-} elseif (strlen($pw1) < 4) {
-
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password must be at least 4 characters</div><div id="returnVal" style="display:none;">false</div>';
-
-} elseif (!filter_var($newemail, FILTER_VALIDATE_EMAIL) == true) {
-
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Must provide a valid email address</div><div id="returnVal" style="display:none;">false</div>';
 
 } else {
     //Validation passed
