@@ -32,6 +32,9 @@ require ($root . "\login\loginheader.php");
     </div>
     <div id="site_content">
       <div id="content">
+        <span>
+          <a href="/login/logout.php"><img title="Logout" src="/img/logout.png" style="width:45px;height:45px;cursor:pointer;"></img></a>
+        </span>
         <div id="info">
         <table>
           <tr style="background: #D3D3D3; color: #000;">

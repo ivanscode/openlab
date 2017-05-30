@@ -139,3 +139,11 @@ function triggerShowViolationsWindow(id){
     showCancelButton: false,
   })
 }
+function triggerWrongLoginWindow(){
+  swal({
+    title: 'Wrong username or password',
+    type: 'error',
+    confirmButtonText: 'Ok',
+    showCancelButton: false,
+  })
+}

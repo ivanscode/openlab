@@ -38,7 +38,10 @@
     </div>
     <div id="site_content">
       <div id="content">
-        <a href="/log"><img src="/img/calendarwhite.png" style="width:45px;height:45px;cursor:pointer;"></img></a>
+        <span>
+          <a href="/log"><img title="Entire Log" src="/img/calendarwhite.png" style="width:45px;height:45px;cursor:pointer;"></img></a>
+          <a href="/login/logout.php"><img title="Logout" src="/img/logout.png" style="width:45px;height:45px;cursor:pointer;"></img></a>
+        </span>
         <div id="info">
         <table>
           <tr style="background: #D3D3D3; color: #000;">

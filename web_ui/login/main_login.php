@@ -13,6 +13,10 @@ if (isset($_SESSION['username'])) {
     <!-- Bootstrap -->
     <link href="../style/bootstrap.css" rel="stylesheet" media="screen">
     <link href="../style/login.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="/swal/sweetalert2.css"/>
+    <script src="/swal/sweetalert2.js"></script>
+    <script src="/js/window-handler.js"></script>
+
   </head>
 
   <body>
@@ -35,7 +39,7 @@ if (isset($_SESSION['username'])) {
     </div> <!-- /container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="/js/jquery-3.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- The AJAX login script -->

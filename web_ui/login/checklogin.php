@@ -1,32 +1,31 @@
 <?php
-//DO NOT ECHO ANYTHING ON THIS PAGE OTHER THAN RESPONSE
-//'true' triggers login success
-ob_start();
+session_start();
 $root = $_SERVER['DOCUMENT_ROOT'];
-include $root . '\login\config.php';
-require $root . '\login\includes\functions.php';
+include($root . "\php\dbconnect.php");
 
 // Define $myusername and $mypassword
-$username = $_POST['myusername'];
-$password = $_POST['mypassword'];
+$username = $_POST["username"];
+$password = $_POST["password"];
 
 // To protect MySQL injection
 $username = stripslashes($username);
 $password = stripslashes($password);
 
-$response = '';
-$loginCtl = new LoginForm;
-$conf = new GlobalConf;
-$lastAttempt = checkAttempts($username);
-$max_attempts = $conf->max_attempts;
+$sql = mysqli_query($connection, "SELECT * FROM `login` WHERE `username`='{$username}' AND `password`='{$password}'");
 
+$true = false;
 
-//First Attempt
-$response = $loginCtl->checkLogin($username, $password);
+while($row = mysqli_fetch_array($sql)){
+  $temp = $row['username'];
+  $true = true;
+}
 
-$resp = new RespObj($username, $response);
-$jsonResp = json_encode($resp);
-echo $jsonResp;
+if($true == true){
+  $_SESSION['username'] = $username;
+  $_SESSION['valid'] = true;
+  echo ("true");
+}else{
+  echo ("false");
+}
 
-unset($resp, $jsonResp);
-ob_end_flush();
+ ?>
