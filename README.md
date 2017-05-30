@@ -12,12 +12,12 @@ The web_ui folder contains all the necessary files to monitor and manage some el
 
 ## Table of Contents
 
-1. [Introduction](https://github.com/ivanscode/openlab#Introduction)
+1. [Introduction](https://github.com/ivanscode/openlab#introduction)
 2. [Table of Contents](https://github.com/ivanscode/openlab#table-of-contents)
-3. [Linux](https://github.com/ivanscode/openlab#Linux)
-    1. [Setup](https://github.com/ivanscode/openlab#Linux#setup)
-    2. [Running](https://github.com/ivanscode/openlab#Linux#running)
-4. [Web UI](https://github.com/ivanscode/openlab#Web-UI)
+3. [Linux](https://github.com/ivanscode/openlab#linux)
+    1. [Setup](https://github.com/ivanscode/openlab#setup)
+    2. [Running](https://github.com/ivanscode/openlab#running)
+4. [Web UI](https://github.com/ivanscode/openlab#web-ui)
 
 ## Linux
 ### Setup
