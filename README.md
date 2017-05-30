@@ -1,6 +1,6 @@
 # OpenLab Project
 
-##Table of Contents
+## Introduction
 
 The files here are the _first_ iteration of the OpenLab framework.
 
@@ -9,3 +9,14 @@ The linux folder contains all the necessary scripts to gather information from t
 **Note:** the `getinfo.py` script relies on `evdev`, a python library not included with Raspbian.
 
 The web_ui folder contains all the necessary files to monitor and manage some elements of a MySQL database. Take note that the PI communicates with the web_ui and its PHP scripts in order to update values to the database.
+
+## Table of Contents
+
+1. [Introduction](https://github.com/ivanscode/openlab#Introduction)
+2. [Table of Contents](https://github.com/ivanscode/openlab#table-of-contents)
+3. [Linux](https://github.com/ivanscode/openlab#Linux)
+4. [Web UI](https://github.com/ivanscode/openlab#Web-UI)
+
+## Linux
+
+## Web UI
