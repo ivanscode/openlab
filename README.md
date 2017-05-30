@@ -18,14 +18,14 @@ The web_ui folder contains all the necessary files to monitor and manage some el
     1. [Setup](https://github.com/ivanscode/openlab#setup)
     2. [Running](https://github.com/ivanscode/openlab#running)
 4. [Web UI](https://github.com/ivanscode/openlab#web-ui)
-    1. [Setup](https://github.com/ivanscode/openlab#web-ui)
-    2. [Running](https://github.com/ivanscode/openlab#web-ui)
+    1. [Setup](https://github.com/ivanscode/openlab#setup-1)
+    2. [Running](https://github.com/ivanscode/openlab#running-1)
 
 ## Linux
 ### Setup
-In the case of this project, I used a Raspberry PI 2 running Raspbian Jessie. Any Linux machine with internet connectivity and a USB port or two will be able to support the framework. The project utilizes a [RFIdeas pcProx Plus](https://www.rfideas.com/products/readers/pcprox-plus-enroll) module to read a RFID-enabled card. Because of it, I needed to pull information directly from it rather than from `TTY0` or something along the lines of that. Here, the `evdev` module helps read the specific input. Make sure to edit the `getinfo.py` file to match the device you're monitoring. You can find your attached inputs in `/dev/input/by-id/`. 
+In the case of this project, I used a Raspberry PI 2 running Raspbian Jessie. Any Linux machine with internet connectivity and a USB port or two will be able to support the framework. The project utilizes a [RFIdeas pcProx Plus](https://www.rfideas.com/products/readers/pcprox-plus-enroll) module to read a RFID-enabled card. Because of it, I needed to pull information directly from it rather than from `TTY0` or something along the lines of that. Here, the `evdev` module helps read the specific input. Make sure to edit the `getinfo.py` file to match the device you're monitoring. You can find your attached inputs in `/dev/input/by-id/`. Also, make sure to edit the domain in both the `pinger.py` and `getinfo.py` scripts. 
 
-**Note:** `evdev` is a pythin library easily found on the internet. Simply install the library and make sure the import on the `getinfo.py` file is right. 
+**Note:** `evdev` is a python library easily found on the internet. Simply install the library and make sure the import on the `getinfo.py` file is right. 
 
 As an experiment, I setup the pinger script as a service and used a custom Daemon to run it in the background, so it is included with the framework.
 
@@ -40,4 +40,8 @@ If everything was setup correctly, and automatic login was enabled, the module w
 ### Setup
 To connect to your own database, simply edit the file `/php/dbconnect.php`.
 
+Everything else should be a copy-paste job without any issues. 
+
 ### Running
+The setup is a bit inefficient due to the Web UI constantly calling the database to query for data, but a more efficient setup would require much more development time, something I did not have. Otherwise, the Web UI enables the user to monitor the status of the scanner module as well as edit all current entries.
+
