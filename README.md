@@ -18,6 +18,8 @@ The web_ui folder contains all the necessary files to monitor and manage some el
     1. [Setup](https://github.com/ivanscode/openlab#setup)
     2. [Running](https://github.com/ivanscode/openlab#running)
 4. [Web UI](https://github.com/ivanscode/openlab#web-ui)
+    1. [Setup](https://github.com/ivanscode/openlab#web-ui)
+    2. [Running](https://github.com/ivanscode/openlab#web-ui)
 
 ## Linux
 ### Setup
@@ -35,3 +37,7 @@ Once everything is in order, simply edit the `/etc/bash.bashrc` file to run the 
 If everything was setup correctly, and automatic login was enabled, the module with the scanner attached should be able to read and send data to the database automatically.
 
 ## Web UI
+### Setup
+To connect to your own database, simply edit the file `/php/dbconnect.php`.
+
+### Running
