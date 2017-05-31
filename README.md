@@ -60,32 +60,52 @@ The log tracks all current and previous sign-ins, but it does not have the names
 
 To set it up, simply execute this SQL code to create the table `log`:
 ```SQL
-CREATE TABLE IF NOT EXISTS log (
-  name varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  room int(11) NOT NULL,
-  description varchar(144) COLLATE utf8_unicode_ci NOT NULL,
-  tin datetime NOT NULL,
-  tout datetime NOT NULL,
-  id int(11) NOT NULL AUTO_INCREMENT,
-  signout tinyint(1) NOT NULL,
-  PRIMARY KEY (id)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=163 ;
+CREATE TABLE IF NOT EXISTS `log` (
+  `name` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `room` int(11) NOT NULL,
+  `description` varchar(144) COLLATE utf8_unicode_ci NOT NULL,
+  `tin` datetime NOT NULL,
+  `tout` datetime NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `signout` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT ;
 ```
 ### People
 The people table stores associated ID numbers to names.
 
 To set it up, simply execute this SQL code to create the table `people`:
-
->`Code will go here`
+```SQL
+CREATE TABLE IF NOT EXISTS `people` (
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `number` varchar(100) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `violations` int(1) NOT NULL DEFAULT '0',
+  `violation_date` date DEFAULT NULL,
+  `violation_description` varchar(144) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  FULLTEXT KEY `ia` (`number`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT ;
+```
 ### Login
 The login table stores the login information for teachers and admins to access the faculty section of the project.
 
 To set it up, simply execute this SQL code to create the table `login`:
-
->`Code will go here`
+```SQL
+CREATE TABLE IF NOT EXISTS `login` (
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 ### Status
 The status table stores flags for various components of the framework such as the scanner module.
 
 To set it up, simply execute this SQL code to create the table `status`:
-
->`Code will go here`
+```SQL
+CREATE TABLE IF NOT EXISTS `status` (
+  `state` int(1) NOT NULL,
+  `new_id` int(1) NOT NULL,
+  `last_id_scanned` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
