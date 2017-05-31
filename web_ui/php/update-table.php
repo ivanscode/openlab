@@ -12,8 +12,9 @@ while($row = mysqli_fetch_array($sqli)){
 //Sort time
 $time = date("Y-m-d h:i:s");
 $date = new DateTime($time);
-$date->modify('-4 hour');
 $nextday = $date;
+$date->modify('-4 hour');
+$date->modify('-1 day');
 $date = date_format($date, "Y-m-d");
 $nextday->modify('+1 day');
 $nextday = date_format($nextday, "Y-m-d");
