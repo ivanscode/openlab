@@ -59,8 +59,8 @@ The setup relies on 3 separate tables to work properly:
 The log tracks all current and previous sign-ins, but it does not have the names of the people in it, rather their ID numbers.
 
 To set it up, simply execute this SQL code to create the table `log`:
-
->`CREATE TABLE IF NOT EXISTS log (
+```SQL
+CREATE TABLE IF NOT EXISTS log (
   name varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   room int(11) NOT NULL,
   description varchar(144) COLLATE utf8_unicode_ci NOT NULL,
@@ -69,7 +69,8 @@ To set it up, simply execute this SQL code to create the table `log`:
   id int(11) NOT NULL AUTO_INCREMENT,
   signout tinyint(1) NOT NULL,
   PRIMARY KEY (id)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=163 ;`
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=163 ;
+```
 ### People
 The people table stores associated ID numbers to names.
 
