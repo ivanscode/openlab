@@ -20,6 +20,11 @@ The web_ui folder contains all the necessary files to monitor and manage some el
 4. [Web UI](https://github.com/ivanscode/openlab#web-ui)
     1. [Setup](https://github.com/ivanscode/openlab#setup-1)
     2. [Running](https://github.com/ivanscode/openlab#running-1)
+5. [MySQL](https://github.com/ivanscode/openlab#mysql)
+    1. [Log](https://github.com/ivanscode/openlab#log)
+    2. [People](https://github.com/ivanscode/openlab#people)
+    3. [Login](https://github.com/ivanscode/openlab#login)
+    4. [Status](https://github.com/ivanscode/openlab#status)
 
 ## Linux
 ### Setup
@@ -40,8 +45,38 @@ If everything was setup correctly, and automatic login was enabled, the module w
 ### Setup
 To connect to your own database, simply edit the file `/php/dbconnect.php`.
 
-Everything else should be a copy-paste job without any issues. 
+Everything else should be a copy-paste job without any issues.
+
+To setup the database, refer to the [MySQL]() section.
 
 ### Running
 The setup is a bit inefficient due to the Web UI constantly calling the database to query for data, but a more efficient setup would require much more development time, something I did not have. Otherwise, the Web UI enables the user to monitor the status of the scanner module as well as edit all current entries.
+
+## MySQL
+The setup relies on 3 separate tables to work properly:
+
+### Log
+The log tracks all current and previous sign-ins, but it does not have the names of the people in it, rather their ID numbers. 
+
+To set it up, simply execute this SQL code to create the table `log`:
+
+>`Code will go here`
+### People
+The people table stores associated ID numbers to names. 
+
+To set it up, simply execute this SQL code to create the table `people`:
+
+>`Code will go here`
+### Login
+The login table stores the login information for teachers and admins to access the faculty section of the project.
+
+To set it up, simply execute this SQL code to create the table `login`:
+
+>`Code will go here`
+### Status
+The status table stores flags for various components of the framework such as the scanner module.
+
+To set it up, simply execute this SQL code to create the table `status`:
+
+>`Code will go here`
 
