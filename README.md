@@ -28,13 +28,13 @@ The web_ui folder contains all the necessary files to monitor and manage some el
 
 ## Linux
 ### Setup
-In the case of this project, I used a Raspberry PI 2 running Raspbian Jessie. Any Linux machine with internet connectivity and a USB port or two will be able to support the framework. The project utilizes a [RFIdeas pcProx Plus](https://www.rfideas.com/products/readers/pcprox-plus-enroll) module to read a RFID-enabled card. Because of it, I needed to pull information directly from it rather than from `TTY0` or something along the lines of that. Here, the `evdev` module helps read the specific input. Make sure to edit the `getinfo.py` file to match the device you're monitoring. You can find your attached inputs in `/dev/input/by-id/`. Also, make sure to edit the domain in both the `pinger.py` and `getinfo.py` scripts. 
+In the case of this project, I used a Raspberry PI 2 running Raspbian Jessie. Any Linux machine with internet connectivity and a USB port or two will be able to support the framework. The project utilizes a [RFIdeas pcProx Plus](https://www.rfideas.com/products/readers/pcprox-plus-enroll) module to read a RFID-enabled card. Because of it, I needed to pull information directly from it rather than from `TTY0` or something along the lines of that. Here, the `evdev` module helps read the specific input. Make sure to edit the `getinfo.py` file to match the device you're monitoring. You can find your attached inputs in `/dev/input/by-id/`. Also, make sure to edit the domain in both the `pinger.py` and `getinfo.py` scripts.
 
-**Note:** `evdev` is a python library easily found on the internet. Simply install the library and make sure the import on the `getinfo.py` file is right. 
+**Note:** `evdev` is a python library easily found on the internet. Simply install the library and make sure the import on the `getinfo.py` file is right.
 
 As an experiment, I setup the pinger script as a service and used a custom Daemon to run it in the background, so it is included with the framework.
 
-Once everything is in order, simply edit the `/etc/bash.bashrc` file to run the scripts upon login automatically. 
+Once everything is in order, simply edit the `/etc/bash.bashrc` file to run the scripts upon login automatically.
 
 **Note:** depending on the environment, automatic login varies across the distros, so I am not including instructions on how to set that up. Similarly, the `bash.bashrc` file is included on Raspbian Jessie, but may not be included on other distros.
 
@@ -56,13 +56,22 @@ The setup is a bit inefficient due to the Web UI constantly calling the database
 The setup relies on 3 separate tables to work properly:
 
 ### Log
-The log tracks all current and previous sign-ins, but it does not have the names of the people in it, rather their ID numbers. 
+The log tracks all current and previous sign-ins, but it does not have the names of the people in it, rather their ID numbers.
 
 To set it up, simply execute this SQL code to create the table `log`:
 
->`Code will go here`
+>`CREATE TABLE IF NOT EXISTS log (
+  name varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  room int(11) NOT NULL,
+  description varchar(144) COLLATE utf8_unicode_ci NOT NULL,
+  tin datetime NOT NULL,
+  tout datetime NOT NULL,
+  id int(11) NOT NULL AUTO_INCREMENT,
+  signout tinyint(1) NOT NULL,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=163 ;`
 ### People
-The people table stores associated ID numbers to names. 
+The people table stores associated ID numbers to names.
 
 To set it up, simply execute this SQL code to create the table `people`:
 
@@ -79,4 +88,3 @@ The status table stores flags for various components of the framework such as th
 To set it up, simply execute this SQL code to create the table `status`:
 
 >`Code will go here`
-
