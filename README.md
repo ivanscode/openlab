@@ -53,7 +53,7 @@ To setup the database, refer to the [MySQL]() section.
 The setup is a bit inefficient due to the Web UI constantly calling the database to query for data, but a more efficient setup would require much more development time, something I did not have. Otherwise, the Web UI enables the user to monitor the status of the scanner module as well as edit all current entries.
 
 ## MySQL
-The setup relies on 3 separate tables to work properly:
+The setup relies on 4 separate tables to work properly:
 
 ### Log
 The log tracks all current and previous sign-ins, but it does not have the names of the people in it, rather their ID numbers.
