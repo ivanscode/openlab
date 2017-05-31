@@ -47,7 +47,7 @@ To connect to your own database, simply edit the file `/php/dbconnect.php`.
 
 Everything else should be a copy-paste job without any issues.
 
-To setup the database, refer to the [MySQL]() section.
+To setup the database, refer to the [MySQL](https://github.com/ivanscode/openlab#mysql) section.
 
 ### Running
 The setup is a bit inefficient due to the Web UI constantly calling the database to query for data, but a more efficient setup would require much more development time, something I did not have. Otherwise, the Web UI enables the user to monitor the status of the scanner module as well as edit all current entries.
