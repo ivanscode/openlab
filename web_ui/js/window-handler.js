@@ -155,6 +155,8 @@ function triggerEmailWindow(){
     inputPlaceholder: 'john_doe17@milton.edu',
     confirmButtonText: 'Ok',
     showCancelButton: false,
+    allowOutsideClick: false,
+    allowEscapeKey: false,
   }).then(function(email){
     $.ajax({
       url: '/student/php/addemail.php',
