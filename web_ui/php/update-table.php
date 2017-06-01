@@ -14,7 +14,6 @@ $time = date("Y-m-d h:i:s");
 $date = new DateTime($time);
 $nextday = $date;
 $date->modify('-4 hour');
-$date->modify('-1 day');
 $date = date_format($date, "Y-m-d");
 $nextday->modify('+1 day');
 $nextday = date_format($nextday, "Y-m-d");

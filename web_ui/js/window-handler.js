@@ -147,3 +147,29 @@ function triggerWrongLoginWindow(){
     showCancelButton: false,
   })
 }
+function triggerEmailWindow(){
+  swal({
+    title: 'Your E-Mail',
+    type: 'question',
+    input: 'email',
+    inputPlaceholder: 'john_doe17@milton.edu',
+    confirmButtonText: 'Ok',
+    showCancelButton: false,
+  }).then(function(email){
+    $.ajax({
+      url: '/student/php/addemail.php',
+      type: 'get',
+      data: { "email": email},
+      success: function(response) {
+        $.ajax({
+          url: '/student/php/getinfo.php',
+          type: 'get',
+          success: function(data) {
+            $('#select').append(data);
+          }
+        });
+      }
+    });
+    $('input[name=email]').val(email);
+  })
+}

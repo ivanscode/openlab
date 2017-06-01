@@ -17,7 +17,7 @@
 <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
 </head>
-<body>
+<body onload="triggerEmailWindow();">
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -25,33 +25,43 @@
       </div>
     </div>
     <div id="content">
-      <form class="form-basic" method="post" action="#">
+      <div></div>
+      <form class="form-basic" method="post" action="php/addinfo.php">
             <div class="form-title-row">
                 <h1>OpenLab Signup</h1>
             </div>
             <div class="form-row">
                 <label>
+                    <span>E-Mail</span>
+                    <input id="email_form" type="text" name="email" readonly>
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <span>Select Lab</span>
+                    <select id="select" name="dropdown">
+                        <option>Add New Lab</option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
                     <span>Lab Title</span>
-                    <input type="text" name="name">
+                    <input type="text" name="title">
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label>
+                    <span>Lab Room</span>
+                    <input type="text" name="room">
                 </label>
             </div>
 
             <div class="form-row">
                 <label>
                     <span>Brief Description</span>
-                    <input type="text" name="email">
-                </label>
-            </div>
-
-            <div class="form-row">
-                <label>
-                    <span>Dropdown</span>
-                    <select name="dropdown">
-                        <option>Option One</option>
-                        <option>Option Two</option>
-                        <option>Option Three</option>
-                        <option>Option Four</option>
-                    </select>
+                    <input type="text" name="description">
                 </label>
             </div>
 
