@@ -25,6 +25,10 @@ The web_ui folder contains all the necessary files to monitor and manage some el
     2. [People](https://github.com/ivanscode/openlab#people)
     3. [Login](https://github.com/ivanscode/openlab#login)
     4. [Status](https://github.com/ivanscode/openlab#status)
+    5. [Labs](https://github.com/ivanscode/openlab#labs)
+6. [How to use](https://github.com/ivanscode/openlab#how-to-use)
+    1. [Students](https://github.com/ivanscode/openlab#students)
+    2. [Faculty](https://github.com/ivanscode/openlab#faculty)
 
 ## Linux
 ### Setup
@@ -109,3 +113,26 @@ CREATE TABLE IF NOT EXISTS `status` (
   `last_id_scanned` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
+### Labs
+The labs table stores all relevant information about a person's experiment in association to the person's email.
+
+To set it up, simply execute this SQL code to create the table `labs`:
+```SQL
+CREATE TABLE IF NOT EXISTS `labs` (
+  `email` varchar(64) NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `description` varchar(144) NOT NULL,
+  `room` int(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+## How to use
+### Students
+The `Students` section can be accessed by anyone from the home page. Once on the page, the student inputs his/her e-mail to retrieve any existing labs. If none exist, the student can create a new one by putting in the title, room, and a brief description of the lab. After, the student clicks `Submit`, so the next time their card is scanned, the associated lab will automatically present itself on the Faculty log.
+
+If the student has several labs at once, the student can select between the labs from the same menu after putting in his/her email without having the need to go through filling the form again. Simply select from the dropdown menu which lab the student needs to work on and click `Submit`.
+### Faculty
+The `Faculty` section is secured by a login system. With proper login information, a faculty member may access that section from where he/she can monitor the current status of the module, and the current ongoing labs. The faculty member also has access to the entire log of the project by clicking the calendar button.
+
+The faculty member may edit variables in the table such as the title of the lab, and the location of the lab without having the student change it. Simply click on the desired field, and a window will popup where the faculty member can change the information.
+
+To logout of the faculty section, simply click the blue door button.
