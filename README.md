@@ -26,6 +26,7 @@ The web_ui folder contains all the necessary files to monitor and manage some el
     * [Login](https://github.com/ivanscode/openlab#login)
     * [Status](https://github.com/ivanscode/openlab#status)
     * [Labs](https://github.com/ivanscode/openlab#labs)
+    * [Violations](https://github.com/ivanscode/openlab#violations)
 * [How to use](https://github.com/ivanscode/openlab#how-to-use)
     * [Students](https://github.com/ivanscode/openlab#students)
     * [Faculty](https://github.com/ivanscode/openlab#faculty)
@@ -120,6 +121,18 @@ CREATE TABLE IF NOT EXISTS `labs` (
   `title` varchar(64) NOT NULL,
   `description` varchar(144) NOT NULL,
   `room` int(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+### Violations
+The violations table stores information like the date and reason of violation as well as a flag that determines whether the student went through the repercussions.
+
+To set it up, simply execute this SQL code to create the table `violations`:
+```SQL
+CREATE TABLE IF NOT EXISTS `violations` (
+  `violation` varchar(144) NOT NULL,
+  `date` date NOT NULL,
+  `id` varchar(64) NOT NULL,
+  `completed` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 ## How to use
