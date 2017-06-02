@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `signout` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT;
 ```
 ### People
 The people table stores associated ID numbers to names.
@@ -85,12 +85,9 @@ CREATE TABLE IF NOT EXISTS `people` (
   `email` varchar(100) NOT NULL,
   `number` varchar(100) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `violations` int(1) NOT NULL DEFAULT '0',
-  `violation_date` date DEFAULT NULL,
-  `violation_description` varchar(144) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  FULLTEXT KEY `ia` (`number`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT ;
+  `current_lab` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT;
 ```
 ### Login
 The login table stores the login information for teachers and admins to access the faculty section of the project.
