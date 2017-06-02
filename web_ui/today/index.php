@@ -27,7 +27,7 @@
   <div id="main">
     <div id="header">
       <div id="logo">
-        <h1>Open<a href="/">Lab</a></h1>
+        <h1>Open<a href="/login/logout.php">Lab</a></h1>
       </div>
       <div id="logo_center">
         <h1>Status: <img id="status_img" src="/img/off.png" alt="On" style="width:45px;height:45px;"></h1>
