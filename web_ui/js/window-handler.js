@@ -112,6 +112,8 @@ function triggerAddViolationsWindow(id){
     confirmButtonText: 'Submit',
     showCancelButton: true,
   }).then(function(text){
+    console.log(text);
+    console.log(id);
     $.ajax({
       url: '/today/php/addviolation.php',
       type: 'get',

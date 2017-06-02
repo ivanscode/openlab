@@ -58,7 +58,7 @@ while($row = mysqli_fetch_array($sql)){
 ."<th id='{$row['id']}' onclick='triggerDescriptionWindow(this.id)' style='cursor: pointer;'>{$row['description']}</th>\n"
 ."<th>{$date_time}</th>\n"
 ."<th>{$date_time_out}</th>\n"
-."<th><span style='cursor:pointer;' onclick='triggerShowViolationsWindow({$row['name']});'>{$violations}</span><span onclick='triggerAddViolationsWindow({$row['name']});'><img src='/img/add.png' style='width:10px;height:10px;float:right;cursor: pointer;'></img></span></th>\n"
+."<th><span style='cursor:pointer;' onclick='triggerShowViolationsWindow(". '"' .$row['name'].'"'.");'>{$violations}</span><span onclick='triggerAddViolationsWindow(".'"'.$row['name'].'"'.");'><img src='/img/add.png' style='width:10px;height:10px;float:right;cursor: pointer;'></img></span></th>\n"
 ."</tr>\n";
 }
 echo '</table>';
