@@ -133,6 +133,22 @@ function triggerAddViolationsWindow(id){
     }
   })
 }
+function setViolationFlag(id, flag, violation){
+  $.ajax({
+    url: '/today/php/setcompflag.php',
+    type: 'get',
+    data:{'id': id, 'flag': flag, 'violation': violation},
+    success: function(response) {
+      var str_flag='';
+      if(flag==0){
+        str_flag='/img/off';
+      }else{
+        str_flag='/img/on';
+      }
+      $("#the_flag").attr("src", str_flag+".png");
+    }
+  });
+}
 function triggerShowViolationsWindow(id){
   $.ajax({
     url: '/today/php/getviolations.php',
