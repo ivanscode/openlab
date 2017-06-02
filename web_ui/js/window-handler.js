@@ -113,9 +113,9 @@ function triggerAddViolationsWindow(id){
     showCancelButton: true,
   }).then(function(text){
     $.ajax({
-      url: '/php/add-new-id.php',
+      url: '/today/php/addviolation.php',
       type: 'get',
-      data: { "id": id, "email": text},
+      data: { 'id': id, 'violation': text},
       success: function(response) {
         swal({
           title: 'Success',
@@ -132,12 +132,20 @@ function triggerAddViolationsWindow(id){
   })
 }
 function triggerShowViolationsWindow(id){
-  swal({
-    title: 'Violations',
-    type: 'info',
-    confirmButtonText: 'Ok',
-    showCancelButton: false,
-  })
+  $.ajax({
+    url: '/today/php/getviolations.php',
+    type: 'get',
+    data:{'id': id},
+    success: function(data) {
+      swal({
+        title: 'Violations',
+        type: 'info',
+        html: data,
+        confirmButtonText: 'Ok',
+        showCancelButton: false,
+      })
+    }
+  });
 }
 function triggerWrongLoginWindow(){
   swal({

@@ -43,10 +43,13 @@ while($row = mysqli_fetch_array($sql)){
   $sql1 = mysqli_query($connection, "SELECT * FROM `people` WHERE `number` LIKE '%{$row['name']}%'");
   while($row2 = mysqli_fetch_array($sql1)){
     $name = $row2['name'];
-    $violations = $row2['violations'];
   }
   if($name == ""){
     $name = $row['name'];
+  }
+  $sql3 = mysqli_query($connection, "SELECT * FROM `violations` WHERE `id` LIKE '%{$row['name']}%'");
+  while($row3 = mysqli_fetch_array($sql3)){
+    $violations = $violations + 1;
   }
   //Print to table
   echo "<tr class='{$class_color}'>\n"
@@ -55,7 +58,7 @@ while($row = mysqli_fetch_array($sql)){
 ."<th id='{$row['id']}' onclick='triggerDescriptionWindow(this.id)' style='cursor: pointer;'>{$row['description']}</th>\n"
 ."<th>{$date_time}</th>\n"
 ."<th>{$date_time_out}</th>\n"
-."<th><span id='{$row['id']}' style='cursor:pointer;' onclick='triggerShowViolationsWindow(this.id)'>{$violations}</span><span><img id='{$row['id']}' onclick='triggerAddViolationsWindow(this.id)' src='/img/add.png' style='width:10px;height:10px;float:right;cursor: pointer;'></img></span></th>\n"
+."<th><span style='cursor:pointer;' onclick='triggerShowViolationsWindow({$row['name']});'>{$violations}</span><span onclick='triggerAddViolationsWindow({$row['name']});'><img src='/img/add.png' style='width:10px;height:10px;float:right;cursor: pointer;'></img></span></th>\n"
 ."</tr>\n";
 }
 echo '</table>';
