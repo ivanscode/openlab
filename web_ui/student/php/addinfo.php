@@ -6,10 +6,9 @@ $selected_key = $_POST['dropdown'];
 $email = $_POST['email'];
 $title = $_POST["title"];
 $room = $_POST["room"];
-$description = $_POST["description"];
 
 if($selected_key == "Add New Lab"){
-  $query = "INSERT INTO labs (email, title, description, room) VALUES ('{$email}', '{$title}', '{$description}', $room)";
+  $query = "INSERT INTO labs (email, title, room) VALUES ('{$email}', '{$title}', $room)";
   if($connection->query($query) === TRUE){
     echo "record created";
     $query = "UPDATE people SET current_lab='{$title}' WHERE email='{$email}'";

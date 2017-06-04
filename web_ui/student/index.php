@@ -59,13 +59,6 @@
             </div>
 
             <div class="form-row">
-                <label>
-                    <span>Brief Description</span>
-                    <input type="text" name="description">
-                </label>
-            </div>
-
-            <div class="form-row">
                 <button type="submit">Submit</button>
             </div>
 

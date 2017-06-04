@@ -119,7 +119,6 @@ To set it up, simply execute this SQL code to create the table `labs`:
 CREATE TABLE IF NOT EXISTS `labs` (
   `email` varchar(64) NOT NULL,
   `title` varchar(64) NOT NULL,
-  `description` varchar(144) NOT NULL,
   `room` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
