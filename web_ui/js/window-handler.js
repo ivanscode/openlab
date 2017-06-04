@@ -106,14 +106,12 @@ function triggerIdentityWindow(id){
 }
 function triggerAddViolationsWindow(id){
   swal({
-    title: 'Violations',
+    title: 'Violation',
     type: 'question',
     input: 'text',
     confirmButtonText: 'Submit',
     showCancelButton: true,
   }).then(function(text){
-    console.log(text);
-    console.log(id);
     $.ajax({
       url: '/today/php/addviolation.php',
       type: 'get',
